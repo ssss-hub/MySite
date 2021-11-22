@@ -8,7 +8,6 @@ services:
       - db
     volumes:
       - ../src:/var/www/html
-    # working_dir: /var/www/html
     ports:
       - 80:80
   db:
@@ -18,7 +17,6 @@ services:
       - ./db/data:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
-      # MYSQL_DATABASE: db_test
       MYSQL_USER: docker
       MYSQL_PASSWORD: docker
       TZ: 'Asia/Tokyo'
