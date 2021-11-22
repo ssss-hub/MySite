@@ -37,7 +37,7 @@
                 1 = 1 
 SQL;
         switch (true) {
-            case $_POST['searchWord'] != '':
+            case @$_POST['searchWord'] != '':
                 $sql .= <<< SQL
                     AND (
                         CharacterTable.CharacterName LIKE :characterName

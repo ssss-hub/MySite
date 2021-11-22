@@ -1,7 +1,7 @@
 <?php
     require_once("../Functions.inc");
     $db_name = 'recipe_db';
-    if ($_POST['fraction'] == '') {
+    if (@$_POST['fraction'] == '') {
         $recipeId = $_GET['recipe_id'];
         $fraction1 = 1;
         $fraction2 = 1;

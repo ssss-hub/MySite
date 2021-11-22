@@ -22,7 +22,7 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">検索ワード</label>
                 <div class="col-sm-10">
-                    <input type="text" name="searchWord" value="<?php echo $_POST['searchWord']; ?>" class="form-control" />
+                    <input type="text" name="searchWord" value="<?php echo @$_POST['searchWord']; ?>" class="form-control" />
                 </div>
             </div>
 			<input type="submit" value="検索" class="btn btn-success" />

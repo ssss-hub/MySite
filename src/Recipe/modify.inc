@@ -3,7 +3,7 @@
     $db_name = 'recipe_db';
     $recipeId = $_GET['recipe_id'];
     switch (true) {
-        case $_POST['modify'] !='':
+        case @$_POST['modify'] !='':
             $recipeId = $_POST['recipe_id'];
             try {
                 $dbh = setDB($db_name);
@@ -26,7 +26,7 @@
             $dbh = null;
             header('Location: ./search.php');
             break;
-        case $_POST['delete'] !='':
+        case @$_POST['delete'] !='':
             $recipeId = $_POST['recipe_id'];
             try {
                 $dbh = setDB($db_name);

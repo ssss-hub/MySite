@@ -22,14 +22,14 @@
             <div class="form-group">
                 <label class="col-sm-2 control-label">検索ワード</label>
                 <div class="col-sm-10">
-                    <input type="text" name="searchWord" value="<?php echo $_POST['searchWord']; ?>" class="form-control" />
+                    <input type="text" name="searchWord" value="<?php echo @$_POST['searchWord']; ?>" class="form-control" />
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox"  name="includeMaterial" value="1" <?php echo ($_POST['includeMaterial'] == '1') ? 'checked=checked' : ''; ?> /> 材料を含めるか
+                            <input type="checkbox"  name="includeMaterial" value="1" <?php echo (@$_POST['includeMaterial'] == '1') ? 'checked=checked' : ''; ?> /> 材料を含めるか
                         </label>
                     </div>
                 </div>

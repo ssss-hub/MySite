@@ -4,7 +4,7 @@
     
     $sql = '';
     switch (true) {
-        case $_POST['searchWord'] != '':
+        case @$_POST['searchWord'] != '':
             $sql = <<< SQL
                 SELECT
                     RecipeTable.RecipeId,
@@ -26,13 +26,13 @@
                     RecipeTable.RecipeName LIKE :recipeName
                     OR RecipeTable.RecipeNameHiragana LIKE :recipeNameHiragana
 SQL;
-            if ($_POST['includeMaterial'] == '1') {
+            if (@$_POST['includeMaterial'] == '1') {
                 $sql .= <<< SQL
                     OR MaterialTable.MaterialName LIKE :materialName
                     OR MaterialTable.MaterialNameHiragana LIKE :materialNameHiragana
 SQL;
             }
-            if ($_POST['includeMaterial'] == '1') {
+            if (@$_POST['includeMaterial'] == '1') {
                 $recipe = array(':recipeName' => '%' . $_POST['searchWord'] . '%', ':recipeNameHiragana' => '%' . $_POST['searchWord'] . '%', ':materialName' => '%' . $_POST['searchWord'] . '%', ':materialNameHiragana' => '%' . $_POST['searchWord'] . '%');
             } else {
                 $recipe = array(':recipeName' => '%' . $_POST['searchWord'] . '%', ':recipeNameHiragana' => '%' . $_POST['searchWord'] . '%');

@@ -2,7 +2,7 @@
     require_once("../../Functions.inc");
     $db_name = 'ssbu_db';
     switch (true) {
-        case $_POST['modify'] !='':
+        case @$_POST['modify'] !='':
             try {
                 $dbh = setDB($db_name);
                 // トランザクション開始
