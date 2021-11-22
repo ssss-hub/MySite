@@ -16,8 +16,6 @@ services:
     container_name: 'db'
     volumes:
       - ./db/data:/var/lib/mysql
-      - ./db/tmp:/tmp2
-      # 調査用なのでtmpは後で消す
     environment:
       MYSQL_ROOT_PASSWORD: root
       # MYSQL_DATABASE: db_test
